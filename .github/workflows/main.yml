@@ -1,0 +1,15 @@
+name: Generate Snake Game
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate_snake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Platane/snk@v1
+        with:
+          username: diya-el-fadhil # Replace with your GitHub username
+          token: ${{ secrets.GITHUB_TOKEN }}
